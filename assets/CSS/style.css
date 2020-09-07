@@ -1,0 +1,299 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+body{
+    background-color: #190025;
+    overflow: hidden;
+    user-select: none;
+}
+/* 
+    game container and background image
+*/
+.game-container{
+    width: 100%;
+    height: 100vh;
+    background-image: url(../IMAGES/game-backround.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+/* 
+    game title and score
+*/
+.game-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+.game-title span{
+    display: inline-block;
+    font-size: 5em;
+    font-weight: 600;
+    color: #eee;
+    background-image: url(../IMAGES/text-bg2.jpg);
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.game-title small{
+    font-size: 1em;
+    font-weight: 600;
+    color: #eee;
+    background-image: linear-gradient(0deg,#58a7ec,#eee);
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#score{
+    position: absolute;
+    display: inline-block;
+    color: #eee;
+    top: 15px;
+    right: 25px;
+    font-weight: 600;
+    font-size: 1em;
+}
+.game-text span:last-child{
+    font-size: 1.5em;
+    position: absolute;
+    top: 15px;
+    right: 50px;
+}
+/* 
+    game settings
+*/
+.settings-btn{
+    position: absolute;
+    top: 50px;
+    right: 25px;
+    height: 40px;
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.settings-btn:hover{
+    transform: rotate(45deg);
+}
+.settings-btn i{
+    color: #eee;
+    font-size: 3em;
+}
+.settings{
+    width: 300px;
+    min-height: 150px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 95px;
+    right: 25px;
+    background: linear-gradient(-30deg,rgb(38, 1, 127,0.78),rgb(88, 167, 236,0.85));
+    padding: 50px 0;
+    clip-path: polygon(70% 5%, 75% 0, 100% 0, 100% 95%, 30% 95%, 25% 100%, 0 100%, 0 5%);
+    visibility: hidden;
+}
+.settings-ani{
+    animation: settings-ani 0.3s ease-in-out;
+}
+@keyframes settings-ani{
+    0%{
+        top: 90px;
+        opacity: 0;
+    }
+    50%{
+        top: 110px;
+        opacity: 0.8;
+    }
+    100%{
+        top: 95px;
+        opacity: 1;
+    }
+}
+.settings button{
+    display: flex;
+    width: 100%;
+    height: 40px;
+    text-align: left;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 5px 0;
+    padding: 0 10px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: #eee;
+    font-weight: 600;
+}
+.settings button:hover{
+    background: linear-gradient(30deg,#ebfdfe,#7db4f8);
+    color: #2c1077;
+}
+.settings button i{
+    color: #eee;
+    padding: 0 10px 0 5px;
+}
+.settings button:hover i{
+    color: #2c1077;   
+}
+.settings .volume{
+    padding: 10px 20px;
+    background-color: transparent;
+    margin-top: 5px;
+    color: #eee;
+    font-weight: 600;
+}
+.settings .volume #audioVolume{
+    width: 100%;
+    height: 12px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: #2c1077;
+    outline: none;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-top: 15px;
+}
+/* for mozilla firefox */
+.settings .volume #audioVolume::-moz-range-thumb{
+    -moz-appearance: none;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #fdf600;
+    cursor: pointer;
+    border: 3px solid #333;
+    box-shadow: -407px 0 0 400px #fdf600;
+    overflow: hidden;
+}
+/* for -webkit */
+.settings .volume #audioVolume::-webkit-slider-thumb{
+    -moz-appearance: none;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #fdf600;
+    cursor: pointer;
+    border: 4px solid #333;
+    box-shadow: -407px 0 0 400px #fdf600;
+}
+/* for ms ie */
+.settings .volume #audioVolume::-ms-thumb{
+    -moz-appearance: none;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #fdf600;
+    cursor: pointer;
+    border: 4px solid #333;
+    box-shadow: -407px 0 0 400px #fdf600;
+}
+/* 
+    dino image and jumping
+*/
+.dino-img{
+    width: 200px;
+    height: 200px;
+    background-image: url(../IMAGES/player.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 0;
+    left: 2vw;
+    text-align: center;
+    color: #eee;
+    font-size: 1.5em;
+}
+.player-jump{
+    animation: jumpPlayer 1s ease-in-out;
+}
+@keyframes jumpPlayer{
+    0%{
+        bottom: 0;
+        transform: rotate(0deg);
+    }
+    50%{
+        bottom: 300px;
+        transform: rotate(360deg);
+    }
+    100%{
+        bottom: 0;
+        transform: rotate(360deg);
+    }
+}
+/* 
+    enemy image and running
+*/
+.enemy-img{
+    width: 234px;
+    height: 125px;
+    background-image: url(../IMAGES/enemy-runn.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 0;
+    right: 5vw;
+    text-align: center;
+    color: #eee;
+    font-size: 1.5em;
+}
+.enemy-run{
+    animation: enemy-run 5s linear infinite;
+}
+@keyframes enemy-run{
+    0%{
+        right: 0vw;
+    }
+    100%{
+        right: 100vw;
+    }
+}
+/* 
+    game over box
+*/
+.gameOver{
+    width: 100%;
+    height: 100%;
+    background-image: url(../IMAGES/game-over.jpg);
+    background-size: 100% 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+    visibility: hidden;
+    animation: an 0.7s cubic-bezier(0.86, 0, 0.07, 1);
+}
+@keyframes an{
+    0%{
+        transform: scale(0.3);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.gameOver #highScore{
+    width: 100%;
+    position: absolute;
+    top: 15px;
+    text-align: center;
+    color: #eee;
+    font-size: 3em;
+}
+.gameOver h1:last-child{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-image: linear-gradient(-45deg,#0fceef,#fb00fa);
+    background-clip: text;
+    text-align: center;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 5em;
+}

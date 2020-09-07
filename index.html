@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,">
+    <title>FEAR OF FOX GAME | Developed by Deepesh Rohilla</title>
+    <!-- css -->
+    <link rel="stylesheet" href="assets/CSS/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <!-- game container -->
+    <div class="game-container">
+        <!-- game score -->
+        <div class="game-text">
+            <span class="game-title">
+                <span>FEAR OF FOX</span>
+                <small>Developed by Deepesh Rohilla</small>
+            </span>
+            <!-- score -->
+            <span id="score">SCORE : 0</span>
+        </div>
+        <!-- settings button -->
+        <button class="settings-btn" id="settings-btn">
+            <i class="material-icons">settings</i>
+        </button>
+        <!-- settings box -->
+        <div class="settings" id="settings-box">
+            <button id="playAudio" title="Play Audio">
+                <i class="material-icons">play_circle_outline</i> Play Audio
+            </button>
+            <button id="pauseAudio" title="Pause Audio">
+                <i class="material-icons">pause_circle_outline</i> Pause Audio
+            </button>
+            <div class="volume">
+                <label for="#audioVolume">Audio Volume</label>
+                <input type="range" id="audioVolume" value="50" min="0" max="100"/>
+            </div>
+        </div>
+        <!-- player image -->
+        <div class="dino-img" id="player"></div>
+        <!-- enemy image -->
+        <div class="enemy-img enemy-run" id="enemy"></div>
+        <!-- game over box -->
+        <div class="gameOver">
+            <h1 id="highScore">YOUR HIGH SCORE : 0</h1>
+            <h1>Please reload to play again.</h1>
+        </div>
+    </div>
+
+    <!-- javascript -->
+    <script src="assets/JAVASCRIPT/main.js"></script>
+</body>
+
+</html>
