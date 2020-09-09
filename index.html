@@ -5,14 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,">
     <title>FEAR OF FOX GAME | Developed by Deepesh Rohilla</title>
+    <link rel="shortcut icon" href="assets/IMAGES/logo.png" type="image/x-icon">
     <!-- css -->
     <link rel="stylesheet" href="assets/CSS/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
-<body>
+<body onload="loader()">
+    <!-- loader animation -->
+    <div class="load">
+        <img src="assets/IMAGES/enemy-runn.gif" />
+    </div>
     <!-- game container -->
     <div class="game-container">
+
         <!-- game score -->
         <div class="game-text">
             <span class="game-title">
@@ -22,6 +28,7 @@
             <!-- score -->
             <span id="score">SCORE : 0</span>
         </div>
+
         <!-- settings button -->
         <button class="settings-btn" id="settings-btn">
             <i class="material-icons">settings</i>
@@ -39,14 +46,22 @@
                 <input type="range" id="audioVolume" value="50" min="0" max="100"/>
             </div>
         </div>
+
+        <!-- play game button-->
+        <div class="play-btn-box">
+            <button class="play-game" id="play-game-btn">PLAY</button>
+        </div>
+
         <!-- player image -->
         <div class="dino-img" id="player"></div>
+
         <!-- enemy image -->
-        <div class="enemy-img enemy-run" id="enemy"></div>
+        <div class="enemy-img" id="enemy"></div>
+
         <!-- game over box -->
         <div class="gameOver">
             <h1 id="highScore">YOUR HIGH SCORE : 0</h1>
-            <h1>Please reload to play again.</h1>
+            <button class="play-again" id="play-again-btn">PLAY AGAIN</button>
         </div>
     </div>
 
