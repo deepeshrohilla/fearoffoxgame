@@ -10,7 +10,7 @@ buttonClickAudio = new Audio("Mouse-Click.mp3")
 
 // auto play audio
 setTimeout(() => {
-    gameAudio.play()
+    // gameAudio.play()
 }, 1000)
 
 // show & hide settings box
@@ -54,6 +54,27 @@ pauseAudio.addEventListener("click", () => {
     gameAudio.pause()
     buttonClickAudio.play()
 })
+
+// Play game when click on play button
+play_game_btn = document.getElementById("play-game-btn")
+play_game_btn.addEventListener("click",()=>{
+    document.getElementById("enemy").classList.add("enemy-run")
+    buttonClickAudio.play()
+    document.querySelector(".play-btn-box").style.backgroundColor = "transparent"
+    play_game_btn.style.visibility = "hidden"
+    gameAudio.play()
+})
+// Play again when click on play again button
+play_again_btn = document.getElementById("play-again-btn")
+play_again_btn.addEventListener("click",()=>{
+    document.querySelector(".gameOver").style.visibility = "hidden"
+    score = 0
+    document.getElementById("enemy").classList.add("enemy-run")
+    updateScore(score)
+    document.querySelector(".enemy-run").style.animationDuration = "5s"
+    gameAudio.play()
+})
+
 
 // when user press up-arrow key on the DOM
 document.addEventListener("keydown", (e) => {
@@ -118,7 +139,13 @@ setInterval(() => {
     }
 }, 100);
 
+// update score
 function updateScore(s){
     document.querySelector("#score").innerHTML = "SCORE : " + s
     document.querySelector("#highScore").innerHTML = "YOUR HIGH SCORE : " + s
+}
+
+// loader animation
+function loader(){
+    document.querySelector(".load").style.visibility = "hidden"
 }
