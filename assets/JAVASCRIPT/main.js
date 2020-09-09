@@ -3,7 +3,7 @@ score = 0
 cross = true
 
 gameAudio = new Audio("music.mp3")
-gameOverAudio = new Audio("gameover.mp3")
+gameOverAudio = new Audio("gameover.mp3s")
 openSettingsAudio = new Audio("opening-file-cabinet.mp3")
 closeSettingsAudio = new Audio("closing-file-cabinet.mp3")
 buttonClickAudio = new Audio("Mouse-Click.mp3")
